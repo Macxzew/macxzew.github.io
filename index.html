@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="https://cdn.glitch.global/9d775c29-2bca-4026-b0e6-5b4dcde1af72/favicon.png?v=1700504641373">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Showzur Profile Card</title>
+</head>
+<body>
+    <div id="loading-animation">
+        <img src="src/img/berry.gif" alt="Chargement">
+    </div>
+    <div class="profile-card">
+        <div class="avatar" onclick="toggleAge()">
+            <img src="https://cdn.glitch.global/9d775c29-2bca-4026-b0e6-5b4dcde1af72/avatar.png?v=1700558121541" alt="Avatar">
+            <div id="ageText" class="age-text">20yo</div>
+        </div>
+        <h3>Showzur</h3>
+        <p>Tech Generalist</p>
+        <div class="social-media">
+            <a href="https://github.com/shwzr"><iconify-icon icon="simple-icons:github"></iconify-icon></a>
+            <a href="https://discordapp.com/users/590292463542075413"><iconify-icon icon="simple-icons:discord"></iconify-icon></a>
+            <a href="https://osu.ppy.sh/users/ToiEnMieux"><iconify-icon icon="simple-icons:osu"></iconify-icon></a>
+            <a href="https://anilist.co/user/Showzur"><iconify-icon icon="simple-icons:anilist"></iconify-icon></a>
+        </div>
+    </div>
+    <div id="githubPage" class="transition-page github">
+        <h1>GitHub</h1>
+    </div>
+    <div id="discordPage" class="transition-page discord">
+        <h1>Discord</h1>
+    </div>
+    <div id="osuPage" class="transition-page osu">
+        <h1>Osu</h1>
+    </div>
+    <div id="anilistPage" class="transition-page anilist">
+        <h1>AniList</h1>
+    </div>
+    <div id="snow-container"></div>
+    <script src="src/js/script.js"></script>
+
+    <p class="made-with-love">Made with ❤️ by Showzur</p>
+</body>
+</html>
