@@ -45,13 +45,16 @@ body {
 }
 
 .card-wrapper {
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 800px;
     position: relative;
     z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .profile-card {
@@ -228,12 +231,37 @@ body {
 
 @media (max-width: 600px) {
     .profile-card {
-        width: 313px;
+        width: 90%;
+        max-width: 313px;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-card h3 {
+        font-size: 12px;
+    }
+
+    .profile-card p {
+        font-size: 10px;
+    }
+
+    .social-media iconify-icon {
+        font-size: 20px;
     }
 }
 
 @media (max-width: 300px) {
     .profile-card {
-        width: 313px;
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .profile-card h3,
+    .profile-card p {
+        font-size: 9px;
+    }
+
+    .social-media iconify-icon {
+        font-size: 18px;
     }
 }
