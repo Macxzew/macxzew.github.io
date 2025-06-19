@@ -72,19 +72,10 @@ function setupCardTiltEffect(card) {
         currentY += (targetY - currentY) * 0.05;
 
         card.style.transform = `rotateX(${-currentY}deg) rotateY(${currentX}deg)`;
-
         requestAnimationFrame(updateRotation);
     }
 
     function handleMouseMove(e) {
-        if (
-            e.clientX < 0 || e.clientY < 0 ||
-            e.clientX > window.innerWidth ||
-            e.clientY > window.innerHeight
-        ) {
-            return;
-        }
-
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -105,14 +96,15 @@ function setupCardTiltEffect(card) {
         }, INACTIVITY_DELAY);
     }
 
-
     function resetRotation() {
         targetX = 0;
         targetY = 0;
     }
 
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseleave', resetRotation);
+    const wrapper = document.querySelector('.card-wrapper');
+    wrapper.addEventListener('mousemove', handleMouseMove);
+    wrapper.addEventListener('mouseleave', resetRotation);
+
     updateRotation();
 }
 
@@ -153,9 +145,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setupSocialMediaTransitions();
     updateAge('2003-06-30');
-});
-
-window.addEventListener('mouseleave', () => {
-    targetX = 0;
-    targetY = 0;
 });
