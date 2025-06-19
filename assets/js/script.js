@@ -58,33 +58,29 @@ function setupSocialMediaTransitions() {
 }
 
 // === Carte 3D (effet tilt) ===
-function setupCardTiltEffect(card) {
-    let inactivityTimer;
-    const INACTIVITY_DELAY = 2000;
+function setupCardTiltEffect() {
+    const wrapper = document.querySelector('.card-wrapper');
+    const card = document.querySelector('.profile-card');
     const maxRotation = 15;
-    let currentX = 0;
-    let currentY = 0;
-    let targetX = 0;
-    let targetY = 0;
+    const INACTIVITY_DELAY = 2000;
+    let currentX = 0, currentY = 0;
+    let targetX = 0, targetY = 0;
+    let inactivityTimer;
 
     function updateRotation() {
-        currentX += (targetX - currentX) * 0.05;
-        currentY += (targetY - currentY) * 0.05;
-
+        currentX += (targetX - currentX) * 0.1;
+        currentY += (targetY - currentY) * 0.1;
         card.style.transform = `rotateX(${-currentY}deg) rotateY(${currentX}deg)`;
         requestAnimationFrame(updateRotation);
     }
 
     function handleMouseMove(e) {
-        const rect = card.getBoundingClientRect();
+        const rect = wrapper.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
-        let percentX = (x / rect.width - 0.5) * 2;
-        let percentY = (y / rect.height - 0.5) * 2;
-
-        percentX = Math.max(-1, Math.min(1, percentX));
-        percentY = Math.max(-1, Math.min(1, percentY));
+        const percentX = Math.max(-1, Math.min(1, (x / rect.width - 0.5) * 2));
+        const percentY = Math.max(-1, Math.min(1, (y / rect.height - 0.5) * 2));
 
         targetX = percentX * maxRotation;
         targetY = percentY * maxRotation;
@@ -96,14 +92,11 @@ function setupCardTiltEffect(card) {
         }, INACTIVITY_DELAY);
     }
 
-    function resetRotation() {
+    wrapper.addEventListener('mousemove', handleMouseMove);
+    wrapper.addEventListener('mouseleave', () => {
         targetX = 0;
         targetY = 0;
-    }
-
-    const wrapper = document.querySelector('.card-wrapper');
-    wrapper.addEventListener('mousemove', handleMouseMove);
-    wrapper.addEventListener('mouseleave', resetRotation);
+    });
 
     updateRotation();
 }
@@ -139,9 +132,8 @@ function updateAge(birthDate) {
 
 // === Initialisation globale ===
 document.addEventListener('DOMContentLoaded', () => {
-    const card = document.querySelector('.profile-card');
     if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
-        setupCardTiltEffect(card);
+        setupCardTiltEffect();
     }
     setupSocialMediaTransitions();
     updateAge('2003-06-30');

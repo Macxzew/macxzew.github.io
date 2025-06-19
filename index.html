@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <title>Macxzew Profile Card</title>
     <link rel="icon" href="https://cdn.glitch.global/9d775c29-2bca-4026-b0e6-5b4dcde1af72/favicon.png?v=1700504641373">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Macxzew Profile Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
+
     <div id="loading-animation">
         <img src="assets/img/berry.gif" alt="Chargement">
     </div>
+
     <div class="card-wrapper">
         <div class="profile-card">
-            <div class="avatar" onclick="toggleAge()">
-                <img src="https://avatars.githubusercontent.com/u/113097122" alt="Avatar">
-                <div id="ageText" class="age-text">20yo</div>
-            </div>
-            <h3>Macxzew</h3>
-            <p>Tech Generalist</p>
-            <div class="social-media">
-                <a href="https://github.com/macxzew"><iconify-icon icon="simple-icons:github"></iconify-icon></a>
-                <a href="https://discordapp.com/users/590292463542075413"><iconify-icon icon="simple-icons:discord"></iconify-icon></a>
-                <a href="https://osu.ppy.sh/users/Macxzew"><iconify-icon icon="simple-icons:osu"></iconify-icon></a>
-                <a href="https://anilist.co/user/Macxzew"><iconify-icon icon="simple-icons:anilist"></iconify-icon></a>
+            <div class="profile-card-content">
+                <div class="avatar" onclick="toggleAgeDisplay()">
+                    <img src="https://avatars.githubusercontent.com/u/113097122" alt="Avatar">
+                    <div id="ageText" class="age-text">21yo</div>
+                </div>
+                <h3>Macxzew</h3>
+                <p>Tech Generalist</p>
+                <div class="social-media">
+                    <a href="https://github.com/macxzew"><iconify-icon icon="simple-icons:github"></iconify-icon></a>
+                    <a href="https://discordapp.com/users/590292463542075413"><iconify-icon icon="simple-icons:discord"></iconify-icon></a>
+                    <a href="https://osu.ppy.sh/users/Macxzew"><iconify-icon icon="simple-icons:osu"></iconify-icon></a>
+                    <a href="https://anilist.co/user/Macxzew"><iconify-icon icon="simple-icons:anilist"></iconify-icon></a>
+                </div>
             </div>
         </div>
     </div>
+
+
     <div id="githubPage" class="transition-page github">
         <h1>GitHub</h1>
     </div>
@@ -42,9 +49,10 @@
     <div id="anilistPage" class="transition-page anilist">
         <h1>AniList</h1>
     </div>
-    <script src="assets/js/script.js"></script>
 
     <p class="made-with-love">Made with ❤️ by Macxzew</p>
+
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/snow.js"></script>
 </body>
 </html>
