@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    background-image: url('https://cdn.glitch.global/9d775c29-2bca-4026-b0e6-5b4dcde1af72/wallpaper.jpg?v=1700504207621');
+    background-image: url('/assets/img/wallpaper.png');
     background-size: cover;
     font-family: 'Press Start 2P', cursive;
     overflow-x: hidden;
