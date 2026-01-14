@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    background-image: url('/assets/img/wallpaper.png');
+    background-image: url('https://raw.githubusercontent.com/Macxzew/macxzew.github.io/8520028f5ebc5cda05b717fcd1ab1b9fc05022e7/assets/img/wallpaper.png');
     background-size: cover;
     font-family: 'Press Start 2P', cursive;
     overflow-x: hidden;
